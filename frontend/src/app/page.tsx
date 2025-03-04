@@ -1,10 +1,5 @@
 "use client";
-import dynamic from "next/dynamic";
-import React from "react";
-
-const Chat = dynamic(() => import("@/components/pages/Chat/Chat"), {
-  ssr: false,
-});
+import Chat from "@/components/pages/Chat/Chat";
 
 const page = () => {
   return (

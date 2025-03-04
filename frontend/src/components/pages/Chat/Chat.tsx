@@ -15,10 +15,11 @@ import MessageInput from "./ChatComponents/MessageInput";
 import ModelSelector from "./ChatComponents/ModelSelector";
 import ParametersControl from "./ChatComponents/ParametersControl";
 import CancelButton from "./ChatComponents/CancelButton";
+import { toast } from "sonner";
 const Chat = () => {
   // Use Redux state and dispatch
   const dispatch = useAppDispatch();
-  const { messages, loading, streamProgress } = useAppSelector(
+  const { messages, loading, streamProgress, modelApi } = useAppSelector(
     (state) => state.chat
   );
 
@@ -31,6 +32,8 @@ const Chat = () => {
 
   // Handle sending a message
   const handleSendMessage = async (userMessage: string) => {
+    if (loading) return;
+    if (modelApi === "") return toast.error("Please Add API Key");
     if (!userMessage.trim()) return;
     dispatch(sendMessage(userMessage));
   };
