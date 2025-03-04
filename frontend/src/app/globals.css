@@ -1,0 +1,222 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --card-bg: #f9f9f9;
+  --card-border: #e5e5e5;
+  --input-bg: #f2f2f2;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --text-primary: #171717;
+  --text-secondary: #666666;
+  --text-muted: #888888;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card-bg: #121217;
+    --card-border: #2a2a35;
+    --input-bg: #19191f;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --text-muted: #6c7280;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Global reset styles */
+* {
+  /* margin: 0; */
+  /* padding: 0; */
+  /* box-sizing: border-box; */
+  /* list-style-type: none; */
+  /* text-decoration: none; */
+  outline: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--card-border) var(--card-bg);
+}
+
+/* .code-container { */
+/* Remove any pseudo-elements that might be causing issues */
+/* & *::before,
+  & *::after {
+    display: none !important;
+    content: "" !important;
+    background: none !important;
+  }
+} */
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card-bg);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* For Firefox */
+
+/* Animation for loading indicators */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+/* Add this to your global CSS file */
+/* Add this to your global CSS file */
+.markdown-content {
+  /* General styling */
+  @apply text-base leading-relaxed;
+
+  /* Headings */
+  h1 {
+    @apply text-3xl font-bold mt-6 mb-4 pb-2 border-b border-gray-300 dark:border-gray-700;
+  }
+
+  h2 {
+    @apply text-2xl font-bold mt-5 mb-3;
+  }
+
+  h3 {
+    @apply text-xl font-bold mt-4 mb-2;
+  }
+
+  h4 {
+    @apply text-lg font-bold mt-3 mb-2;
+  }
+
+  /* Paragraphs and spacing */
+  p {
+    @apply my-3;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    @apply pl-6 my-3;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  /* Code blocks - additional styling */
+  pre {
+    @apply rounded-md my-4;
+  }
+
+  /* Horizontal rule */
+  hr {
+    @apply my-6 border-t border-gray-300 dark:border-gray-700;
+  }
+
+  /* Inline code */
+  :not(pre) > code {
+    @apply rounded px-1 py-0.5 bg-gray-200 dark:bg-gray-800 text-red-500 dark:text-red-400;
+  }
+
+  /* Links */
+  a {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    @apply italic pl-4 border-l-4 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 my-4;
+  }
+
+  /* Table styling enhancements */
+  table {
+    @apply w-full border-collapse my-4;
+  }
+
+  table th {
+    @apply bg-gray-100 dark:bg-gray-800 text-left p-2 font-semibold border border-gray-300 dark:border-gray-700;
+  }
+
+  table td {
+    @apply p-2 border border-gray-300 dark:border-gray-700;
+  }
+
+  /* Math equations */
+  .math-display {
+    @apply overflow-x-auto py-2;
+  }
+
+  /* Images */
+  img {
+    @apply max-w-full h-auto rounded-md my-4 mx-auto;
+  }
+
+  /* Callouts for special info */
+  .info,
+  .warning,
+  .error,
+  .success {
+    @apply p-4 my-4 rounded-md border;
+  }
+
+  .info {
+    @apply bg-blue-50 border-blue-200 text-blue-800 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-300;
+  }
+
+  .warning {
+    @apply bg-yellow-50 border-yellow-200 text-yellow-800 dark:bg-yellow-900/30 dark:border-yellow-800 dark:text-yellow-300;
+  }
+
+  .error {
+    @apply bg-red-50 border-red-200 text-red-800 dark:bg-red-900/30 dark:border-red-800 dark:text-red-300;
+  }
+
+  .success {
+    @apply bg-green-50 border-green-200 text-green-800 dark:bg-green-900/30 dark:border-green-800 dark:text-green-300;
+  }
+}
