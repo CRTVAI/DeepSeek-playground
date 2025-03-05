@@ -2,6 +2,9 @@
 
 ![DeepSeek Playground Logo](https://raw.githubusercontent.com/CRTVAI/CRTVAI.assets/83cb3e5f2c82c6374121355f9c9489a74e69ab10/projects/aiplayground/metaimage.png)
 
+Website Link :
+https://deepseek.playground.crtvai.com/
+
 A powerful and intuitive interface for interacting with DeepSeek AI models. This playground allows users to easily chat with various DeepSeek models using their API key, with support for streaming responses and customizable model parameters.
 
 ## Features
